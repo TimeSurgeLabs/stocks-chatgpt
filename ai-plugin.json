@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Alpaca Markets for ChatGPT",
+  "name_for_model": "stock_prices",
+  "description_for_human": "Get market data and ask chatgpt about stock prices",
+  "description_for_model": "Plugin for getting stock market and cryptocurrency data.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:8000/openapi.yaml"
+  },
+  "logo_url": "https://alpaca.markets/docs/alpaca_icon@1x.png",
+  "contact_email": "chandler@timesurgelabs.com",
+  "legal_info_url": "http://www.example.com/legal"
+}
