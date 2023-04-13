@@ -9,7 +9,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "http://localhost:8000/openapi.yaml"
+    "url": "https://stocksgpt.timesurgelabs.com/openapi.json"
   },
   "logo_url": "https://alpaca.markets/docs/alpaca_icon@1x.png",
   "contact_email": "chandler@timesurgelabs.com",
