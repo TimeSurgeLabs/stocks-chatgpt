@@ -70,7 +70,7 @@ def get_stock_bars_range(symbol: str, since: str):
         return Response("Invalid since time", status_code=400)
 
     req = StockBarsRequest(
-        symbol_or_symbols=symbol,
+        symbol_or_symbols=[symbol],
         timeframe=timeframe,
         start=start,
         end=arrow.now().shift(minutes=-15).datetime,
@@ -95,7 +95,7 @@ def get_crypto_bars(symbol: str):
 
     resp = crypto_client_hist.get_crypto_bars(
         CryptoBarsRequest(
-            symbol_or_symbols=f'{symbol.upper()}/USD',
+            symbol_or_symbols=[f'{symbol.upper()}/USD'],
             timeframe=TimeFrame.Day,
             start=arrow.now().shift(months=-1).datetime,
             end=arrow.now().shift(minutes=-15).datetime,
@@ -123,7 +123,7 @@ def get_crypto_bars_range(symbol: str, since: str):
 
     resp = crypto_client_hist.get_crypto_bars(
         CryptoBarsRequest(
-            symbol_or_symbols=f'{symbol.upper()}/USD',
+            symbol_or_symbols=[f'{symbol.upper()}/USD'],
             timeframe=timeframe,
             start=start,
             end=arrow.now().shift(minutes=-15).datetime,
@@ -140,29 +140,6 @@ def get_crypto_bars_range(symbol: str, since: str):
             'close': bar.close,
             'date': arrow.get(bar.timestamp).format('YYYY-MM-DD HH:mm:ss')})
     return b
-
-
-@app.get("/stock/{symbol}", response_model=list[HistoricalStockResponse], description="Gets the current stock price")
-def get_stock_latest(symbol: str):
-
-    resp = stock_client_hist.get_stock_latest_quote(
-        StockLatestQuoteRequest(symbol_or_symbols=symbol))
-
-    return {
-        'symbol': symbol,
-        'price': resp[symbol].ask_price
-    }
-
-
-@app.get("/crypto/{symbol}", response_model=LatestStockResponse, description="Gets the current crypto price")
-def get_crypto_latest(symbol: str):
-    symbol = f'{symbol.upper()}/USD'
-    resp = crypto_client_hist.get_crypto_latest_quote(
-        CryptoLatestQuoteRequest(symbol_or_symbols=symbol))
-    return {
-        'symbol': symbol,
-        'price': resp[symbol].ask_price
-    }
 
 
 @app.get('/openapi.yaml', include_in_schema=False)
