@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5f8b0e5e124e4ded5eda14a5d182c28680219120dbe1e0944e1761c251ed778d"
+            "sha256": "227a24208a30a0dfc2be20271f8c768bec5ebbe5f1e9488f2ca0b8b9b0dff804"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,11 +18,11 @@
     "default": {
         "alpaca-py": {
             "hashes": [
-                "sha256:8344f74d76cac660451c31d9f2a7afbb6d99d7a88681c24ebeeeabd19bef3744",
-                "sha256:e2875619acd3a5a408ffa0a879b701e4e2dad485b68c9bb2dd268dbb82324e4b"
+                "sha256:1a59b55f7ac104d47e1dcd63a71db4e349e973036ee5c8a4004defbd10008416",
+                "sha256:9508988c7c757af71b95bc2b9e2fd3e10bb92f202aa0fcdd8e77ecc896a5681d"
             ],
             "index": "pypi",
-            "version": "==0.8.0"
+            "version": "==0.8.1"
         },
         "anyio": {
             "hashes": [
@@ -260,7 +260,7 @@
                 "sha256:f64bb98ac59b3ea3bf74b02f13836eb2e24e48e0ab0145bbda646295769bd780",
                 "sha256:f9006288bcf4895917d02583cf3411f98631275bc67cce355a7f39f8c14338fa"
             ],
-            "markers": "python_version < '3.10'",
+            "index": "pypi",
             "version": "==1.24.2"
         },
         "pandas": {

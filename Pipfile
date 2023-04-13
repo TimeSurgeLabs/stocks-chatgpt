@@ -10,6 +10,7 @@ uvicorn = "*"
 python-dotenv = "*"
 alpaca-py = "*"
 pyyaml = "*"
+numpy = "*"
 
 [dev-packages]
 autopep8 = "*"
