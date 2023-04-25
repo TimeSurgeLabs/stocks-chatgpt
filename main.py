@@ -155,3 +155,9 @@ def read_openapi_yaml() -> Response:
 def read_ai_plugin_json() -> Response:
     with open('ai-plugin.json', 'r') as f:
         return Response(f.read(), media_type='application/json')
+
+
+@app.get('/robots.txt', include_in_schema=False)
+def read_robots_txt() -> Response:
+    with open('robots.txt', 'r') as f:
+        return Response(f.read(), media_type='text/plain')
